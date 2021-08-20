@@ -1,6 +1,29 @@
 //==================
-// common functions
+// global variable
 //==================
+let withPromo = false;
+
+
+
+//==================
+// event functions
+//==================
+
+// grand total function
+function updateGrandTotal() {
+    // get grand total text field
+    const grandTotalPriceField = document.getElementById("grand-total");
+    // get total price
+    const totalPriceField = parseFloat(document.getElementById("total-price").innerText);
+
+    // checking if promo has been provided or not
+    if(withPromo) {
+        // applying 20% discount on promo code
+        grandTotalPriceField.innerText = totalPriceField * 0.8;
+    } else {
+        grandTotalPriceField.innerText = totalPriceField;
+    }
+}
 
 // total price updater function
 function updateTotalPrice() {
@@ -10,22 +33,23 @@ function updateTotalPrice() {
     const storageCost = parseFloat(document.getElementById("storage-cost").innerText);
     const deliveryCharge = parseFloat(document.getElementById("delivery-charge").innerText);
 
-    // total cost and grand-total text element
+    // total cost text element
     const totalPriceField = document.getElementById("total-price");
-    const grandTotalPriceField = document.getElementById("grand-total");
 
     //set total cost
     const totalCost = basePrice + memoryCost + storageCost + deliveryCharge;
     totalPriceField.innerText = totalCost;
-    grandTotalPriceField.innerText = totalCost;
+
+    // update grand total
+    updateGrandTotal(false);
 };
 
 // memory updater function
 function updateMemory(event) {
-    //html price field form memory
+    // html price field form memory
     let memoryField = document.getElementById("memory-cost");
 
-    //get memory size dynamically from html data-name attribute
+    // get memory size dynamically from html custom data-size attribute
     let memorySize = event.target.getAttribute("data-size");
 
     // updating price based on memory size
@@ -45,10 +69,10 @@ function updateMemory(event) {
 
 // storage updater function
 function updateStorage(event) {
-    //html price field form memory
+    // html price field form memory
     let storageField = document.getElementById("storage-cost");
 
-    //get memory size dynamically from html data-name attribute
+    // get storage size dynamically from html custom data-size attribute
     let storageSize = event.target.getAttribute("data-size");
 
     // updating price based on memory size
@@ -71,10 +95,10 @@ function updateStorage(event) {
 
 // delivery cost updater function
 function updatedeliveryCost(event) {
-    //html price field form memory
+    // html price field form memory
     let deliveryChargeField = document.getElementById("delivery-charge");
 
-    //get memory size dynamically from html data-name attribute
+    // get delivery charge dynamically from html custom data-charge attribute
     let deliveryCharge = event.target.getAttribute("data-charge");
 
     // updating price based on memory size
@@ -92,6 +116,30 @@ function updatedeliveryCost(event) {
     updateTotalPrice();
 };
 
+// apply promo code function
+function applyPromoCode(event) {
+    // get promo code from input field
+    const promoCode = document.getElementById("promo-code");
+    const promoCodeValue = document.getElementById("promo-code").value;
+    //setting promo code fiend to empty
+    promoCode.value = "";
+    
+    // validating promo code
+    if(promoCodeValue == "") {
+        return;
+    } else {
+        // check if promo code is "stevekaku"
+        if(promoCodeValue.toLowerCase() == "stevekaku") {
+            // set global promo variable to "true"
+            withPromo = true;
+            updateGrandTotal();
+            event.target.setAttribute("disabled", true);
+        } else {
+            return;
+        }
+    }
+}
+
 
 
 //==================
@@ -100,3 +148,4 @@ function updatedeliveryCost(event) {
 document.getElementById("memory").addEventListener("click", updateMemory);
 document.getElementById("storage").addEventListener("click", updateStorage);
 document.getElementById("delivery").addEventListener("click", updatedeliveryCost);
+document.getElementById("promo-btn").addEventListener("click", applyPromoCode);
