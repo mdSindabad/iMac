@@ -22,22 +22,24 @@
             <!-- memory selection section -->
             <div id="memory" class="mt-2 mt-md-3">
                 <h5>Memory</h5>
-                <!-- data-name is used to capture memory size dynamically from javaScript -->
-                <button data-name="8gb" class="btn btn-outline-secondary">8GB unified memory</button>
-                <button data-name="16gb" class="btn btn-outline-secondary">16GB unified memory</button>
+                <!-- data-size attribute is used to capture memory size dynamically from javaScript -->
+                <button data-size="8gb" class="btn btn-outline-secondary">8GB unified memory</button>
+                <button data-size="16gb" class="btn btn-outline-secondary">16GB unified memory</button>
             </div>
             <!-- storage selection section -->
-            <div class="mt-2 mt-md-3">
+            <div id="storage" class="mt-2 mt-md-3">
                 <h5>Storage</h5>
-                <button class="btn btn-outline-secondary">256GB SSD storage</button>
-                <button class="btn btn-outline-secondary">512GB SSD storage</button>
-                <button class="btn btn-outline-secondary">1TB SSD storage</button>
+                <!-- data-size attribute is used to capture memory size dynamically from javaScript -->
+                <button data-size="256gb" class="btn btn-outline-secondary">256GB SSD storage</button>
+                <button data-size="512gb" class="btn btn-outline-secondary">512GB SSD storage</button>
+                <button data-size="1tb" class="btn btn-outline-secondary">1TB SSD storage</button>
             </div>
             <!-- delivery selection section -->
-            <div class="mt-2 mt-md-3">
-                <h5>Storage</h5>
-                <button class="btn btn-outline-secondary">Friday, Aug 25 FREE Prime Delivery</button>
-                <button class="btn btn-outline-secondary">Friday, Aug 21 Delivery charge $20</button>
+            <div id="delivery" class="mt-2 mt-md-3">
+                <h5>Choose your delivery option</h5>
+                <!-- data-charge attribute is used to capture memory size dynamically from javaScript -->
+                <button data-charge="free" class="btn btn-outline-secondary">Friday, Aug 25 FREE Prime Delivery</button>
+                <button data-charge="paid" class="btn btn-outline-secondary">Friday, Aug 21 Delivery charge $20</button>
             </div>
             <!-- cart section -->
             <div class="row mt-5">
@@ -76,7 +78,7 @@
     </main>
     <!-- footer section -->
     <footer class="my-3 text-center">
-        <h2>Total: $<span>1299</span></h2>
+        <h2>Total: $<span id="grand-total">1299</span></h2>
     </footer>
 
     <script src="main.js"></script>
