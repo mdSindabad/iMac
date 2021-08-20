@@ -69,7 +69,7 @@ function updateMemory(event) {
 
 // storage updater function
 function updateStorage(event) {
-    // html price field form memory
+    // html price field form storage
     let storageField = document.getElementById("storage-cost");
 
     // get storage size dynamically from html custom data-size attribute
@@ -95,7 +95,7 @@ function updateStorage(event) {
 
 // delivery cost updater function
 function updatedeliveryCost(event) {
-    // html price field form memory
+    // html price field form delivery cost
     let deliveryChargeField = document.getElementById("delivery-charge");
 
     // get delivery charge dynamically from html custom data-charge attribute
@@ -121,6 +121,7 @@ function applyPromoCode(event) {
     // get promo code from input field
     const promoCode = document.getElementById("promo-code");
     const promoCodeValue = document.getElementById("promo-code").value;
+    
     //setting promo code fiend to empty
     promoCode.value = "";
     
