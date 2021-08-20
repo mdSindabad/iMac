@@ -20,10 +20,11 @@
             <h2>Customize your Blue 24-inch iMac with Apple M1 Chip.</h2>
             <p class="mt-2">Apple M1 chip with 8-core CPU with 4 performance and 4 efficiency cores, 7-gpu, and 16-cores Neural Engine 8GB unified memmory 256GB SSD storage Two Thunderbolt / USB ports Magic Mouse Magic Keyboard - US English</p>
             <!-- memory selection section -->
-            <div class="mt-2 mt-md-3">
+            <div id="memory" class="mt-2 mt-md-3">
                 <h5>Memory</h5>
-                <button class="btn btn-outline-secondary">8GB unified memory</button>
-                <button class="btn btn-outline-secondary">16GB unified memory</button>
+                <!-- data-name is used to capture memory size dynamically from javaScript -->
+                <button data-name="8gb" class="btn btn-outline-secondary">8GB unified memory</button>
+                <button data-name="16gb" class="btn btn-outline-secondary">16GB unified memory</button>
             </div>
             <!-- storage selection section -->
             <div class="mt-2 mt-md-3">
@@ -43,25 +44,25 @@
                 <div class="col-12 col-md-8">
                     <div class="d-flex justify-content-between border-bottom">
                         <h5>Base Price</h5>
-                        <p class="fw-bold">$<span>1299</span></p>
+                        <p class="fw-bold">$<span id="base-price">1299</span></p>
                     </div>
                     <div class="d-flex justify-content-between border-bottom mt-3">
                         <h5>Extra memory cost</h5>
-                        <p class="fw-bold">$<span>0</span></p>
+                        <p class="fw-bold">$<span id="memory-cost">0</span></p>
                     </div>
                     <div class="d-flex justify-content-between border-bottom mt-3">
                         <h5>Extra storage cost</h5>
-                        <p class="fw-bold">$<span>0</span></p>
+                        <p class="fw-bold">$<span id="storage-cost">0</span></p>
                     </div>
                     <div class="d-flex justify-content-between border-bottom border-2 border-dark mt-3">
                         <h5>Delivery charge</h5>
-                        <p class="fw-bold">$<span>0</span></p>
+                        <p class="fw-bold">$<span id="delivery-charge">0</span></p>
                     </div>
                     <div class="d-flex justify-content-between border-bottom mt-3">
                         <h5>Total Price</h5>
-                        <p class="fw-bold">$<span>1299</span></p>
+                        <p class="fw-bold">$<span id="total-price">1299</span></p>
                     </div>
-                    <!-- prop section -->
+                    <!-- promo section -->
                     <div class="justify-content-between border-bottom mt-3">
                         <p>Add Promo code</p>
                         <div class="input-group">
