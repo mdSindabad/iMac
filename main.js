@@ -27,7 +27,7 @@ function updateGrandTotal() {
 
 // total price updater function
 function updateTotalPrice() {
-    // get all the prices
+    // get all the prices fileds
     const basePrice = parseFloat(document.getElementById("base-price").innerText);
     const memoryCost = parseFloat(document.getElementById("memory-cost").innerText);
     const storageCost = parseFloat(document.getElementById("storage-cost").innerText);
@@ -36,7 +36,7 @@ function updateTotalPrice() {
     // total cost text element
     const totalPriceField = document.getElementById("total-price");
 
-    //set total cost
+    // calculate and update total cost
     const totalCost = basePrice + memoryCost + storageCost + deliveryCharge;
     totalPriceField.innerText = totalCost;
 
