@@ -4,12 +4,9 @@
 let withPromo = false;
 
 
-
-//==================
-// event functions
-//==================
-
+//---------------------
 // grand total function
+//---------------------
 function updateGrandTotal() {
     // get grand total text field
     const grandTotalPriceField = document.getElementById("grand-total");
@@ -25,7 +22,11 @@ function updateGrandTotal() {
     }
 }
 
+
+
+//------------------------------
 // total price updater function
+//------------------------------
 function updateTotalPrice() {
     // get all the prices fileds
     const basePrice = parseFloat(document.getElementById("base-price").innerText);
@@ -44,7 +45,11 @@ function updateTotalPrice() {
     updateGrandTotal(false);
 };
 
-// memory updater function
+
+
+//-------------------------
+// memory price updater function
+//-------------------------
 function updateMemory(event) {
     // html price field form memory
     let memoryField = document.getElementById("memory-cost");
@@ -67,7 +72,11 @@ function updateMemory(event) {
     updateTotalPrice();
 };
 
-// storage updater function
+
+
+//--------------------------
+// storage price updater function
+//--------------------------
 function updateStorage(event) {
     // html price field form storage
     let storageField = document.getElementById("storage-cost");
@@ -93,7 +102,11 @@ function updateStorage(event) {
     updateTotalPrice();
 };
 
+
+
+//--------------------------------
 // delivery cost updater function
+//--------------------------------
 function updatedeliveryCost(event) {
     // html price field form delivery cost
     let deliveryChargeField = document.getElementById("delivery-charge");
@@ -116,7 +129,11 @@ function updatedeliveryCost(event) {
     updateTotalPrice();
 };
 
+
+
+//---------------------------
 // apply promo code function
+//---------------------------
 function applyPromoCode(event) {
     // get promo code from input field
     const promoCode = document.getElementById("promo-code");
@@ -144,7 +161,7 @@ function applyPromoCode(event) {
 
 
 //==================
-// event handlers
+// event listeners
 //==================
 document.getElementById("memory").addEventListener("click", updateMemory);
 document.getElementById("storage").addEventListener("click", updateStorage);
