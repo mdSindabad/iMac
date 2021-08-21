@@ -151,6 +151,7 @@ function applyPromoCode(event) {
             // set global promo variable to "true"
             withPromo = true;
             updateGrandTotal();
+            // disabling the promo button
             event.target.setAttribute("disabled", true);
         } else {
             return;
